@@ -157,7 +157,7 @@ void aluno_print(aluno_t* aluno)
             (int)aluno_get_situacao(aluno));
     fprintf(stdout,"Indice Academico:\t%2.1f\t\tHoras Cursadas:\t%d\n", (float)aluno_get_ia(aluno),
             (int)aluno_get_horas_cursadas(aluno));
-    fprintf(stdout,"Unidades Curriculares:\t%d\n",(int)mc_node_get_uc_node_total(aluno_get_mc_do_curso(aluno)));
+    fprintf(stdout,"Unidades Curriculares:\t%d\n",(int)aluno_get_discip_node_total(aluno));
 
     for(i=0; i<aluno_get_discip_node_total(aluno); i++)
     {
@@ -187,12 +187,11 @@ void aluno_print(aluno_t* aluno)
 }
 
 //file functions
-aluno_t* aluno_load_aluno(void)
+aluno_t* aluno_load_from_txt(char *arquivo, FILE *fp )
 {
     aluno_t* novo_aluno = NULL;
     uint8_t nome[50];
     uint32_t matricula = NULL;
-    char c_matricula[10];
     uint16_t id_curso = NULL;
     char c_id_curso[10];
     uint8_t id_grade = NULL;
@@ -227,34 +226,10 @@ aluno_t* aluno_load_aluno(void)
     dll_add_tail(lista_de_mc,mc_eng);
 
     dll_t* lista_de_uc = mc_node_get_uc_node_list(mc_eng);
-    //node_t* searching_node = dll_get_head(lista_de_uc);
 
     char* uc_codigo;
     char codigobuffer[9];
-
-    char arquivo[20];
-    printf("Digite o nome do arquivo aluno: ");
-    scanf("%s", arquivo);
     fflush(stdin);
-
-    //char nome_arquivo = 'boletim_test.txt';
-
-
-
-
-    // printf("Digite o nome do arquivo do aluno a ser adicionado: ");
-    //scanf("%s", (char*)nome_arquivo);
-
-//(uint8_t*)"Rodrigo Belisario"
-
-    FILE *fp = fopen(arquivo, "r"); //lê arquivo
-
-    if (fp == NULL) // Verificação de erro
-    {
-        /* Imprime erro e aborta */
-        perror("Erro em ler_arquivo: fopen"); //mensagem de erro
-        exit(EXIT_FAILURE); // Exit
-    }
 
     while (fgets(buffer,100,fp)!= NULL)
     {
@@ -280,9 +255,8 @@ aluno_t* aluno_load_aluno(void)
         }
         if (line_index == 16)
         {
-            strncpy(c_matricula, buffer, 10);
-            matricula = atoi(c_matricula);
-            memcpy((char*)nome, &buffer[13], 50);
+            sscanf(buffer, "%d - %50[A-Z\x20]", (int*)&matricula, (char*)nome);
+
         }
         if (line_index == 18)
         {
@@ -411,8 +385,6 @@ aluno_t* aluno_load_aluno(void)
     printf("Ano entrada: %i\n", ano_entrada);
     printf("Semestre entrada: %i\n", semestre_entrada);
     */
-
-    fclose(fp);
 
 
     //aluno_discip_new(novo_aluno, uint8_t* codigo_diciplina, uint32_t turma, float conceito,uint8_t faltas, float frequencia, uint8_t origem, uint8_t situacao);

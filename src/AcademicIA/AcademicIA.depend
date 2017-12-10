@@ -100,7 +100,7 @@
 	<stdlib.h>
 	"doubly_linked_list.h"
 
-1512850144 source:c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\main.c
+1512880629 source:c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\main.c
 	<stdio.h>
 	<stdlib.h>
 	"matriz_curricular.h"
@@ -108,8 +108,9 @@
 	"node.h"
 	"doubly_linked_list.h"
 	"aluno.h"
+	"ordenacao.h"
 
-1512673798 c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\aluno.h
+1512882408 c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\aluno.h
 	<string.h>
 	<stdint.h>
 	"doubly_linked_list.h"
@@ -126,13 +127,13 @@
 	<stdlib.h>
 	"node.h"
 
-1512495872 source:c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\unidade_curricular.c
+1512872488 source:c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\unidade_curricular.c
+	<string.h>
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
 	"unidade_curricular.h"
 
-1512850221 source:c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\aluno.c
+1512882484 source:c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\aluno.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -141,4 +142,12 @@
 	"unidade_curricular.h"
 	"node.h"
 	"doubly_linked_list.h"
+
+1512882693 source:c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\ordenacao.c
+	<stdio.h>
+	<stdlib.h>
+	"aluno.h"
+	"ordenacao.h"
+
+1512878255 c:\users\rfr_9\desktop\prog 2\projeto final\academic_ia-quicksort-master\academic_ia-quicksort-master\src\academicia\ordenacao.h
 
